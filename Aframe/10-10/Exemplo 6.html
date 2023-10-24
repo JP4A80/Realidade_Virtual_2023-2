@@ -1,0 +1,36 @@
+'<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aframe - Aula RV</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene stats vr-mode-ui="enabled: false"> 
+        <a-assets>
+            <video
+            id="video"
+            autoplay
+            preload="auto"
+            loop="true"
+            src="./imagens/Teste.mp4"
+            ></video>
+
+        </a-assets>
+    
+    <a-camera 
+    position="0 1.5 0"
+    ></a-camera>
+
+    <a-video
+    position="0 0 -20"
+    height="18"
+    width="32"
+    src="#video"
+    ></a-video>
+
+    </a-scene>
+</body>
+</html>'

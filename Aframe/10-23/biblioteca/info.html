@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo com Imagem 360° - InfoGroup e InfoIcon</title>
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+
+    <script>
+        AFRAME.registerComponent('infogroup', {
+            init: function() {
+                this.el.addEventListener('reloadinfo', function(evt) {
+                    var currinfogroup = document.getElementById(evt.detail.currinfo);
+                    currinfogroup.setAttribute("scale", "0 0 0");
+
+                    var newinfogroup = document.getElementById(evt.detail.newinfo);
+                    newinfogroup.setAttribute("scale", "1 1 1");
+                });
+            }
+        });
+
+        AFRAME.registerComponent('infoicon', {
+            schema: {
+                infolink: { type: "string", default: "" }
+            },
+            init: function() {
+                this.el.setAttribute("src", "#logo");
+                this.el.setAttribute("scale", "0.5 0.5 0.5");
+                this.el.setAttribute("look-at", "#cam");
+
+                var data = this.data;
+
+                this.el.addEventListener('click', function() {
+                    this.setAttribute("scale", "2.5 1.25 1");
+                    this.setAttribute("src", data.infolink);
+                });
+                this.el.addEventListener('mouseleave', function() {
+                    this.setAttribute("scale", "0.5 0.5 0.5");
+                    this.setAttribute("src", "#logo");
+                });
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <a-scene >
+        <a-assets>
+            <img id="logo" src="logo_bilioteca.jpeg">
+            <img id="duvidabio" src="duvidas_biblioteca.png">
+            <img id="imagem360" src="biblioteca360.png">
+        </a-assets>
+
+        <a-sky src="#imagem360"></a-sky>
+        <a-entity id="duvidaBiliotecaInfo" infogroup position="0 1 -3">
+            <a-image infoicon="infolink:#duvidabio" position="-1 0 0"></a-image>
+        </a-entity> 
+
+        <a-entity id="cam" camera look-controls position="0 1.6 0">
+            <a-entity cursor="fuse: true; fuseTimeout: 2000;" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015; segmentsTheta:32"></a-entity>
+
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>

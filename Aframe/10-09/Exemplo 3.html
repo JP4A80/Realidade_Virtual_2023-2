@@ -1,0 +1,44 @@
+'<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aframe - Aula RV</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene> 
+        <!-- Um  plano-->
+        <a-plane
+        position="0 -2 -10"
+        rotation="-90 0 0"
+        height="10"
+        width="15"
+        color="#FF3300"
+        ></a-plane>
+
+        <!-- Um  plano-->
+        <a-plane
+        position="0 -2 -10"
+        rotation="0 0 0"
+        height="10"
+        width="15"
+        color="#00FFFF"
+        ></a-plane>
+
+
+        <!--Nó torus-->
+        <a-torus-knot  
+        position="0 1 -6"
+        color="yellow"
+        wireframe="true"
+        ></a-torus-knot>
+
+        <!--Um céu-->
+        <a-sky
+        color="blue"
+        ></a-sky>
+    </a-scene>
+</body>
+</html>'

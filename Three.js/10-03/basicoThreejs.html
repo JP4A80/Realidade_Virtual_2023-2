@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Three.js com MeshBasicMaterial</title>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        //configurar a cena
+        const scene = new THREE.Scene();
+
+        //configurar a cena
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+        
+        //configurar o render 
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        
+        //LOADERS - TEXTURE, VIDEOS, MODELS....
+        const loader = new THREE.TextureLoader();
+        loader.load(
+            //1° argumento
+            "imagem 3.png",
+
+            //2° argumento 
+            function(texture){
+                const sphere = new THREE.Mesh(
+                    new THREE.BoxGeometry( 2, 2, 2),
+                    new THREE.MeshBasicMaterial({
+                        map: texture,
+                    })
+                );
+                scene.add(sphere);
+                renderer.render(scene, camera);
+            });
+
+
+        </script>
+</body>
+</html>

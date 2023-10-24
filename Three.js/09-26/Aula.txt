@@ -1,0 +1,21 @@
+Three.js
+
+* webgl -> api baixo nível usada  para manipular elementos 3d
+* three.js -> usa o webgl, fornecendo a capacidade de forma mais facil manipular elementos 3d
+* three.js -> biblioteca javascript para criar e animar gráficos 3d
+* three.js -> pode ser combinada com outros biblioteca e ferramentas para rv 
+* three.js -> é uma biblioteca 3d que pode ser utilizada em uma estrutura para rv
+
+Arquitetura three.js
+* instalar a biblioteca
+    -> donwload
+    -> CDN
+
+* scene -> todos os objetos 3D são organizados 
+* camera -> ambiente tridimensional da camera
+* render -> represerntação 2D do ambiente 3D 
+* geometry -> forma e estrutura  dos objetos 3D 
+* material -> cores, texturas
+* iluminicação -> interação da luz com a cena(objetos 3D)
+* animação -> interação com a cena(objetos 3D)
+* controles -> interaçãos do usuario com a cena(biblioteca externa)

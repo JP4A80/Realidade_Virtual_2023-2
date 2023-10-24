@@ -1,0 +1,60 @@
+<html> 
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+    <title>Realidade Virtual</title> 
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script> 
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'></link> 
+    <link rel="stylesheet" href="https://www.x3dom.org/wp-content/themes/x3domnew/css/bootstrapCosmo.css" 
+    type="text/css" media="screen" />
+
+    <style type="text/css">
+    .conteudo-x3dom 
+    {
+        text-align:center
+    }
+    button
+        {
+        padding: 9px;
+        border: none;
+        border-radius: 4px;
+        }
+        h2, h3 {
+            text-align: center;
+        }       
+    </style>
+    
+    </head> 
+    <body> 
+    <div class="container">
+        <h2>Conceitos de Realidade Virtual</h2>
+        <h3>Exemplo de Interação com elemento X3DOM</h3>   
+        <div class="conteudo-x3dom">
+        <x3d  width='70%' height='70%'>    
+            <scene>
+            <Viewpoint  id="frontalview" position="0.87500 -0.21796 4.11873" orientation="0.00000 -1.00000 0.00000 0.0000">
+            </Viewpoint>
+            
+    
+            <Viewpoint id="topoview" position="2.64724 1.92990 3.25410" orientation="-0.74251 0.64386 0.18471 0.71156">
+            </Viewpoint>         
+
+            <Transform>
+                <!-- vamos fazer essa parte -->
+                <Shape>                          
+                    <!-- vamos fazer essa parte -->
+                    <Appearance>
+                    <Material diffuseColor="1 0 0 "></Material>
+                    </Appearance>
+                    <box size="1 1 1"></box>
+                </Shape>
+            </Transform>        
+        </scene> 
+        </x3d>
+        <!-- vamos fazer essa parte -->
+        <button onclick="document.getElementById('frontalview').setAttribute('set_bind','true');">Visão Frontal</button>
+        <button onclick="document.getElementById('topoview').setAttribute('set_bind','true');">Visão Topo</button>
+        
+        </div>
+        </div>
+    </body> 
+</html> 

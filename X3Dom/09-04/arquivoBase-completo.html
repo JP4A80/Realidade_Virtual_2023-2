@@ -1,0 +1,82 @@
+    <html> 
+        <head> 
+            <title>Aula RV</title> 			
+            <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
+            <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+        <style>
+            body
+            {
+                margin: 0;
+                padding: 10px;
+                font-family: "Ubuntu", sans-serif;
+            }
+            #cena_3d
+            {
+                width: 70%;
+                height: 70%;
+                background: #8d8d8d url(fundo.jpg);
+            }
+        </style>        
+        </head> 
+        <body> 
+            <h1>Aula de Realdade Virtual</h1> 
+            <p> 
+                28/08/2023 
+            </p> 
+            <x3d id="cena_3d">
+                <scene>            
+                    <transform translation="0 1.5 0">
+                    <shape>
+                        <box size="6 0.2 3"></box> 
+                        <appearance>
+                            <imageTexture url=".\Imagem\madeira.jpg"></imageTexture>
+                            <material diffuseColor="red"></material>
+                        </appearance> 
+                    </shape>                      
+                    </transform>
+
+                    <transform translation="-2.5 0 1.1">
+                        <shape>
+                            <appearance>
+                                <imageTexture url=".\Imagem\madeira.jpg"></imageTexture>
+                            </appearance>
+                            <box size="0.3 3 0.3"></box>                    
+                        </shape>
+                    </transform>
+
+                    <transform translation="-2.5 0 -1.1">
+                        <shape>
+                            <appearance>
+                                <imageTexture url=".\Imagem\madeira.jpg"></imageTexture>
+                            </appearance>
+                            <box size="0.3 3 0.3"></box>                    
+                        </shape>
+                    </transform>
+
+                    <transform translation="2.5 0 1.1">
+                        <shape>
+                            <appearance>
+                                <imageTexture url=".\Imagem\madeira.jpg"></imageTexture>
+                            </appearance>
+                            <box size="0.3 3 0.3"></box>                    
+                        </shape>
+                    </transform>
+
+                    <transform translation="2.5 0 -1.1">
+                        <shape>
+                            <appearance>
+                                <imageTexture url=".\Imagem\madeira.jpg"></imageTexture>
+                            </appearance>
+                            <box size="0.3 3 0.3"></box>                    
+                        </shape>
+                    </transform>
+
+                    <transform translation="0 1.6 0">
+                        <inline url="teste.glb"></inline>
+                    </transform>
+                    
+            </scene>      
+            </x3d>
+        </body> 
+    </html>           
+        

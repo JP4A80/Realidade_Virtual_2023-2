@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aframe - Aula RV</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene> 
+        <!-- Um  box-->
+        <a-box
+        position="0 0.5 -3"
+        rotation="0 45 0"
+        color="#4CC3D9"
+        ></a-box>
+
+        <!-- Um  esfera-->
+        <a-sphere
+        position="0 1.25 -5"
+        radius="1.25"
+        color="gray"
+        ></a-sphere>
+        
+        <!-- Um  cilindro-->
+        <a-cylinder
+        position="0 0.5 -4"
+        radius="0.5"
+        height="1"
+        color="yellow"
+        ></a-cylinder>
+        
+        <!-- Um  plano-->
+        <a-plane
+        position="0 0.6 -5"
+        rotation="-90 0 0"
+        height="4"
+        width="4"
+        color="black"
+        ></a-plane>
+
+        <!--Um céu-->
+        <a-sky
+        color="blue"
+        ></a-sky>
+    </a-scene>
+</body>
+</html>

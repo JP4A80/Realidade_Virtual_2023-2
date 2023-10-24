@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>aframe-chromakey-material example</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+  </head>
+
+  <body>
+    <video 
+      style="opacity:  0;"
+      id="videochroma"
+      src="./video.mp4"
+      loop autoplay muted>
+    </video>
+
+    <a-scene>
+      <a-sky 
+      src="biblioteca.png"
+      ratation="0 -120 0"
+      position="-30 0 -250">
+    </a-sky>
+
+      <a-plane 
+      id="esquerda"
+      material="
+      shader: chromakey;
+      src:#videochroma;
+      color: 0.1 0.9 0.2"
+      position="-196.61895 -68.72151 -376.64085"
+      scale="50.88913 118.08618 15"></a-plane>
+
+      <a-plane 
+      id="direita"
+      material="
+      shader: chromakey;
+      src:#videochroma;
+      color: 0.1 0.9 0.2"
+      position="62.00529 -87.07437 -674.85904"
+      scale="90.99787 164.61204 15"></a-plane>
+      </a-plane> 
+    </a-scene>
+  </body>
+</html>

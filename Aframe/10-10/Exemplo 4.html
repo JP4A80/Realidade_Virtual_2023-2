@@ -1,0 +1,51 @@
+'<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aframe - Aula RV</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene> 
+        <a-assets>
+            <img
+            id="textura"
+            src="./imagens/imagem.jpg"
+            />
+        </a-assets>
+
+        <a-box
+        position="0 0.5 -5"
+        depth="1"
+        height="1"
+        width="1"
+        rotation="0 45 0"
+        src="#textura"
+        >
+        </a-box>
+
+        <a-box
+        position="0 1.5 -5"
+        depth="1"
+        height="1"
+        width="1"
+        rotation="0 45 0"
+        src="#textura"
+        >
+        </a-box>
+
+        <a-box
+        position="0.5 0 .5 -5"
+        depth="1"
+        height="1"
+        width="1"
+        rotation="0 45 0"
+        src="#textura"
+        >
+        </a-box>
+
+    </a-scene>
+</body>
+</html>'

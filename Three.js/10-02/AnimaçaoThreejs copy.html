@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo Three.js com MeshBasicMaterial</title>
+    <style>
+        body { margin: 0; }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        //configurar a cena
+        const scene = new THREE.Scene();
+
+        //configurar a cena
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 1;
+        
+        //configurar o render 
+        const renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        
+        //configurar a geometria de cubo(BoxGeometry)
+        const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+
+        //criar um materia basico verde (MeshBasicMaterial)
+        const material = new THREE.MeshNormalMaterial();
+
+        //Criar uma malha(mesh) com a geometria e o material
+        const cube = new THREE.Mesh(geometry,material);
+
+        //Adicionar o plane à cena 
+        scene.add(cube);
+
+        //Criando animação
+        const anime = function(){
+            requestAnimationFrame(anime);
+
+            //Rotação do plano
+            cube.rotation.y +=0.05;
+            cube.rotation.z +=0.05;
+
+            //rederizar a cena com a câmera
+            renderer.render(scene, camera);
+        };
+
+        //Iniciar a animação
+        anime();
+
+    </script>
+</body>
+</html>

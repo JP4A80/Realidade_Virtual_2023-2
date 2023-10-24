@@ -1,0 +1,66 @@
+    <html> 
+        <head> 
+            <title>Aula RV</title> 			
+            <script type='text/javascript' src='http://www.x3dom.org/download/x3dom.js'> </script> 
+            <link rel='stylesheet' type='text/css' href='http://www.x3dom.org/download/x3dom.css'></link> 
+        </head> 
+        <style>
+            body{
+                margin: 0;
+                padding: 10px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            #cena_3d
+            {
+                width: 70%;
+                height: 70%;
+                background: #000 url(imagem\ 3.png);
+            }
+        </style>
+        <body> 
+            <h1>Aula de Realdade Virtual</h1> 
+            <p> 
+                <h2>28/08/2023</h2> 
+            </p> 
+            <x3d id="cena_3d">
+                <scene>
+                    <!--<shape>
+                        <appearance>
+                            <material diffuseColor="1 0 0"></material>
+                        </appearance>
+                        <box>
+                        </box>
+
+                        
+                    </shape>-->
+                    <transform translation="0 0 0">
+                        <shape>
+                            <box></box>
+                            <appearance>
+                            <material diffuseColor="red"></material>
+                        </appearance>
+                        </shape>
+                    </transform>
+                
+                    <transform translation="-3 0 0">
+                        <shape>
+                            <sphere> </sphere>
+                            <appearance>
+                            <material diffuseColor="green"></material>
+                        </appearance>
+                        </shape>
+                    </transform>
+
+                    <transform translation="3 0 0">
+                        <shape>
+                            <cone> </cone>
+                            <appearance>
+                            <material diffuseColor="blue"></material>
+                        </appearance>
+                        </shape>
+                    </transform>
+                </scene>
+            </x3d>
+        </body> 
+    </html>           
+        

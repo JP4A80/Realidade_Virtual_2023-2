@@ -1,0 +1,56 @@
+<!-- https://doc.x3dom.org/tutorials/animationInteraction/animate/index.html -->
+<!-- https://doc.x3dom.org/tutorials/animationInteraction/onoutputchange/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aula de Textura com X3DOM</title>
+    <script type="text/javascript" src="https://www.x3dom.org/download/x3dom.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/x3dom.css">
+</head>
+<style>
+.conteudoPagina 
+{ 
+    max-width: 800px; 
+    margin: auto; 
+} 
+</style>
+<body>
+    <div class="conteudoPagina"> 
+    <x3d width="80%" height="80%">
+        <scene>
+            <transform DEF="objeto3D">
+                <shape>
+                    <appearance>
+                        <material diffuseColor='1 0 0'></material>
+                        <texture url="2-mapa-mundi.webp"></tx   exture>
+                    </appearance>
+                    <sphere></sphere>
+                </shape>
+                </transform>        
+                    <timeSensor 
+                    DEF="tempoAnimacao"
+                        cycleInterval="2"
+                        loop="true"></timeSensor>
+                    <PositionInterpolator 
+                    DEF="movimentoInterpolacao"
+                    key="0 0.5 1"
+                    keyValue="0 0 0  0 6 0  0 0 0">
+                    </PositionInterpolator>
+                    <Route 
+                        fromNode="tempoAnimacao"
+                        fromField="fraction_changed"
+                        toNode="movimentoInterpolacao"
+                        toField="set_fraction">
+                    </Route>
+                    <Route 
+                        fromNode="movimentoInterpolacao"
+                        fromField="value_changed"
+                        toNode="objeto3D"
+                        toField="translation">
+                    </Route>
+        </scene>
+    </x3d>
+    </div>   
+</body>
+</html>

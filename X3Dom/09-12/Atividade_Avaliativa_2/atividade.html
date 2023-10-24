@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade X3DOM</title>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'>
+</head>
+<style>
+    .conteudoPagina 
+    { 
+        max-width: 900px; 
+        margin: auto; 
+    } 
+    </style>
+<body>
+    <div class="conteudoPagina"> 
+        <x3d width="90%" height="80%">
+        <scene>
+        
+            <transform translation="3.5 -0.5 0">
+                <!-- Shape com inline de X3D -->
+                <inline url="7.glb"></inline>
+            </transform>
+
+            <transform translation="-3 0 0 ">
+                <!-- Shape com textura de imagem -->
+                <shape>
+                    <appearance>
+                        <material diffuseColor='1 0 0'></material>
+                        <texture url="2-mapa-mundi.webp"></tx   exture>
+                    </appearance>
+                    <sphere></sphere>
+                </shape>
+            </transform>
+
+            <transform translation="0.5 0 0">
+                <!-- Shape com textura de vídeo -->
+                <scene>
+                    <shape>
+                        <appearance>
+                            <MovieTexture repeatS="true" reapeatT="true" loop="true" url="bigBuckBunny.ogv"><MovieTexture/>
+                        </appearance>
+                        <box size="4 2 0.05"></box>
+                    </shape>
+            </transform>            
+        </scene>
+    </x3d>
+    </div>
+</body>
+</html>

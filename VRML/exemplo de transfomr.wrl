@@ -1,0 +1,27 @@
+#VRML V2.0 utf8
+
+Transform {
+#Definição do nó pai   
+    children DEF aula Shape {
+        geometry Sphere {
+            radius 
+        }
+
+        appearance Appearance {
+            material Material{
+                diffuseColor 1 0 0 
+            }
+        }
+    }
+}
+
+Transform {
+#Definição do nó pai 2    
+    
+}
+
+
+Transform {
+ #Uso de nó pai   
+    
+}

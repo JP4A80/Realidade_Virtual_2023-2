@@ -1,0 +1,40 @@
+#VRML V2.0 utf8
+
+
+Shape {
+    geometry Box {
+        size 2.5 3 2.5
+    }
+
+    appearance Appearance {
+        material Material{
+            diffuseColor 0.3 1.0 0
+            specularColor 0.5 0 0 
+            shininess 0
+            transparency 0.5
+        }
+    }
+}
+
+Shape {
+    geometry Cone {
+        bottomRadius 1.0
+        height 2
+        bottom TRUE 
+        side TRUE
+    }
+
+        appearance Appearance {
+            material Material{
+                diffuseColor 1 0.5 1
+            }
+        }
+}
+
+
+
+
+
+
+
+

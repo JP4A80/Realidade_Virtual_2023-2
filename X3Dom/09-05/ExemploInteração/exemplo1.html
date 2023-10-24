@@ -1,0 +1,47 @@
+<html> 
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+    <title>Realidade Virtual</title> 
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script> 
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'></link>
+    <link rel="stylesheet" href="https://www.x3dom.org/wp-content/themes/x3domnew/css/bootstrapCosmo.css" 
+    type="text/css" media="screen" />
+    <script language="javascript">
+    //vamos fazer essa parte
+      function pressiona(){
+        if(document.getElementById('objeto clicado').getAttribute('diffuseColor')=='1 0 0'){
+          document.getElementById('objeto clicado').setAttribute('diffuseColor','0 0 1')
+        }else{
+          document.getElementById('objeto clicado').setAttribute('diffuseColor','1 0 0')
+        }
+      }
+    </script>
+    
+  </head> 
+  <body> 
+  <h1>Exemplo de Interação em uma cena X3DOM</h1>      
+    <x3d  width='70%' height='70%'>    
+      <scene>           
+        <Shape>                          
+          <!-- vamos fazer essa parte -->
+          <appearance>
+            <material diffuseColor="1 0 0 "></material>
+          </appearance>
+          <box size="2 2 2"></box>
+        </Shape>
+
+          <Transform translation='0 0 0.4'>
+            <!-- vamos fazer essa parte -->
+            <Shape onclick="pressiona();">
+              <appearance>
+                <material id="pressiona" diffuseColor="0 1 0 "></material>
+              </appearance>
+              <sphere radius="1"></sphere>
+            </Shape>
+          </Transform>               
+        </scene> 
+    </x3d> 
+
+    
+  </body> 
+</html> 

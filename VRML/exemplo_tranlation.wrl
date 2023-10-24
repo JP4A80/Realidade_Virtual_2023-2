@@ -1,0 +1,20 @@
+#VRML v2.0 utf8
+
+Transform {
+    ##translation 2 -2 0 
+    rotation 1 0 0 0.75
+    children [
+        Shape{
+            appearance Appearance {
+                material Material {
+                   diffuseColor 1 0 0 
+                }
+            }
+
+            geometry Cone {
+                bottomRadius 2.5
+                height 5
+            }
+        }
+    ]
+}

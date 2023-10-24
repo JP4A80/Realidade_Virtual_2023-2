@@ -1,0 +1,17 @@
+Computação Gráfica e a Realidade Virtual 
+
+Arquitetura do three.js
+
+Scene -> Todos Os objetos 3d são organizados.
+Render -> Criar a representação 2d do ambiente 3d no navegador.
+Camera -> Ponto de vista do usuário dentro do ambiente ed.
+Objetos 3d -> Geometry - Forma e estrutura dos objetos 3d.
+Material -> Propriedade, reflexão, transparência, brilho, entre outros.
+Luz -> pontuais, direcionais e focais - sombras e reflexos.
+
+PAGINA COM THREE.js
+
+1. Biblioteca -> three.js
+2.Criar a cena -> Instância da classe scene
+3. Adicionar objetosa cena -> Geometria e material
+4. Renderizar a cena -> Instância da classe render
