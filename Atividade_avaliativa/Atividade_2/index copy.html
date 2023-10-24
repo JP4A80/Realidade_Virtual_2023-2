@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
     
-    <!-- Image link template to be reused. -->
+    <!-- Image link template to be reused.
     <script id="link" type="text/html"> 
       <a-entity class="link"
         geometry="primitive: plane; height: 1; width: 1"
@@ -21,30 +21,30 @@
         proxy-event="event: click; to: #image-360; as: fade"
         sound="on: click; src: #click-sound"></a-entity>
     </script>
+    -->
   </head>
+
   <body>
     <a-scene>
       <a-assets>
-        <img id="recepcao" src="arquivos/1.jpg">
-        <img id="sala1" src="arquivos/2.jpg">
-        <img id="sala2" src="arquivos/3.jpg">
+        <img id="metro" src="Arquivos/metro.jpg">
 
-
+<!--
         <img id="logo_recepcao" src="./arquivos/recepcao.png">
         <img id="logo_sala1" src="./arquivos/sala1.png">
         <img id="logo_sala2" src="./arquivos/sala2.png">
 
         <audio id="click-sound" src="./arquivos/click.ogg"></audio>
+-->
 
       </a-assets>
 
-      <a-sky id="image360" radius="10" src="#recepcao"></a-sky>
+      <a-sky id="image360" radius="10" src="#metro"></a-sky>
 
-      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">  
-        <a-entity template="src: #link" data-src="#recepcao" data-thumb="#logo_recepcao"></a-entity>
-        <a-entity template="src: #link" data-src="#sala1" data-thumb="#logo_sala1"></a-entity>
-      <a-entity template="src: #link" data-src="#sala2" data-thumb="#logo_sala2"></a-entity>
+      <!--<a-entity>
+
       </a-entity>
+    -->
 
       <a-entity camera look-controls>
         <a-cursor
