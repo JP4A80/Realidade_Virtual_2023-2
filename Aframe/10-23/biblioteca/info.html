@@ -49,6 +49,7 @@
             <img id="logo" src="logo_bilioteca.jpeg">
             <img id="duvidabio" src="duvidas_biblioteca.png">
             <img id="imagem360" src="biblioteca360.png">
+            <a-link  href = "https://eyes.nasa.gov/apps/solar-system/#/home"  title = "Teste" > </a-link>
         </a-assets>
 
         <a-sky src="#imagem360"></a-sky>
@@ -57,7 +58,12 @@
         </a-entity> 
 
         <a-entity id="cam" camera look-controls position="0 1.6 0">
-            <a-entity cursor="fuse: true; fuseTimeout: 2000;" geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.015; segmentsTheta:32"></a-entity>
+        <a-cursor
+            id="cursor"
+            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+            event-set__mouseenter="_event: mouseenter; color: springgreen"         
+        ></a-cursor>
 
         </a-entity>
 
