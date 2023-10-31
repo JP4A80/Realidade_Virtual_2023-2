@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap 3D Model Marketplace Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            margin-bottom: 10px;
+        }
+        .featured-model {
+            height: 400px;
+            background-color: transparent;
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<div class="container my-5">
+    <!-- Marketplace Header -->
+    <div class="row mb-4">
+        <div class="col">
+            <h1 style="color: #a4a2a2;" class="text-center">Product Marketplace</h1>            
+        </div>
+    </div>
+
+    <!-- Featured Product with 3D Model -->
+    <div class="row">
+        <div class="col-lg-6 mx-auto mb-4">
+            <model-viewer src="nike_air_zoom_pegasus_36.glb"
+                          alt="3D model of the featured product"
+                          autoplay
+                          auto-rotate
+                          camera-controls
+                          shadow-intensity="1"
+                          interaction-prompt="none"
+
+                          class="featured-model w-100">
+            </model-viewer>
+        </div>
+    </div>
+
+    <!-- Product List -->
+    <div class="row">
+        <h3 style="color: #a4a2a2;" class="text-center mb-4">Outros Produtos</h3>
+        <!-- Product Card 1 -->
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img src="22.png" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title">Produto 1</h5>
+                    <p class="card-text">Some quick example text to build on the card title.</p>
+                    <a href="#" class="btn btn-primary">Ver Produto</a>
+                </div>
+            </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img src="2.png" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                    <h5 class="card-title">Produto 2</h5>
+                    <p class="card-text">Some quick example text to build on the card title.</p>
+                    <a href="#" class="btn btn-primary">Ver Produto</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

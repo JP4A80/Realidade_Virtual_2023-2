@@ -1,3 +1,18 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,10 +24,11 @@
     <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
     <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
     
-    <!-- Image link template to be reused.-->
-    <script id="link" type="text/html"> 
-      <a-entity class="link"
+    <!-- Clicar no card e ir para outra imagem-->
+        <script id="link" type="text/html">
+    <a-entity class="link"
         geometry="primitive: plane; height: 1; width: 1"
         material="shader: flat; src: ${thumb}"
         event-set__mouseenter="scale: 1.2 1.2 1"
@@ -22,7 +38,7 @@
         sound="on: click; src: #click-sound"></a-entity>
     </script>
     
-
+<!--script para funcionar botão de duvida
     <script>
       AFRAME.registerComponent('infogroup', {
           init: function() {
@@ -57,7 +73,7 @@
               });
           }
       });
-  </script>
+  </script>-->
 
 
   </head>
@@ -65,41 +81,47 @@
   <body>
     <a-scene>
       <a-assets>
+        <img id="recepcao" src="./Arquivos/recepcao.png">
+        <img id="sala1" src="./Arquivos/sala1.png">
+        <img id="sala2" src="./Arquivos/sala2.png">
+
         <img id="metro" src="Arquivos/metro.jpg">
         <img id="logo" src="./Arquivos/interrogação.png">
-        <img id = "espaco" src = "./Arquivos/espaco.jpg" >
+        <img id ="espaco" src ="./Arquivos/espaco.jpg" >
         <img id="metro2" src="./Arquivos/metro2.jpg">
       </a-assets>
 
 
       <a-sky id="image360" radius="10" src="#metro" rotation="0 -90 0"  ></a-sky>
-      <a-entity id="duvidaBiliotecaInfo" infogroup position="0 1 -3">
+
+      <!--<a-entity id="duvidaBiliotecaInfo" infogroup position="0 1 -3">
         <a-image infoicon="infolink:#espaco" position="-1 0 0"></a-image>
-    </a-entity>
+      </a-entity>-->
 
 
     <a-entity id="links" layout="type: line; margin: 1.5;" position="0 -1 -4">
-      <a-entity template="src: #link" data-src="#metro2" data-thumb="#salaIcone"></a-entity>
-      <a-entity template="src: #link" data-src="#sala2" data-thumb="#sala2Icone"></a-entity>
-      <a-entity template="src: #link" data-src="#recepcao" data-thumb="#recepcaoIcone"></a-entity>
-  </a-entity>
+      <a-entity template="src: #link" data-src="#metro2" data-thumb="#recepcao"></a-entity>
+      <a-entity template="src: #link" data-src="#espaco" data-thumb="#sala1"></a-entity>
+      <a-entity template="src: #link" data-src="#metro" data-thumb="#sala2"></a-entity>
+    </a-entity>
 
+      <!--
       <a-text 
       font="kelsonsans" 
       value="Algum lugar aleatorio" 
       width="8" 
       position="-2 -0.1 -5"
       rotation="0 5   0 0"
-      ></a-text> 
+      ></a-text> -->
 
-      <a-entity camera look-controls>
-        <a-cursor
-          id="cursor"
-          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-          event-set__mouseenter="_event: mouseenter; color: springgreen"         
-          ></a-cursor>
-      </a-entity>
+        <a-entity camera look-controls>
+          <a-cursor id="cursor"
+            animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+            animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 2500"
+            event-set__mouseenter="_event: mouseenter; color: springgreen">
+          </a-cursor>
+        </a-entity>
+      
     </a-scene>
   </body>
 </html>
