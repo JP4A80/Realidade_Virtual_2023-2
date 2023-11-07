@@ -1,68 +1,130 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+body{
+    font-family: 'Roboto';
+    font-size: 16px;
+    margin: 0;
+    background-color: #000000;
+}
 
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-color: black;
-    color:aliceblue;
-}
-
-.header
-    {
-        margin: .30em auto;
-        width: 90%;
-        min-height: 1em;
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-    }
-
-.wrap
+.page
 {
-    margin: .25em auto;
-    width: 90%;
-}
-
-.nav
-{
-    display: inline-block;
-    vertical-align: top;
-    background-color: #1e6381;
-    margin: 0 .25% 0 0;
-    width: 20%;
-    min-height: 670px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .section
 {
-    display: inline-block;
-    background-color: #1e6381;
-    margin: 0;
-    width: 58%;
-    min-height: 670px;
-
+    width: 100%;
+    height: 100px;
+    display: flex;
 }
 
-.aside
+.menu
 {
-    display: inline-block;
-    vertical-align: top;
-    background-color: #1e6381;
-    margin: 0 .25% 0 0;
-    width: 20%;
-    min-height: 670px;
-
+    background-color: #5995DA;
+    max-height: 50px;
+    min-height: 30px;
+    justify-content: start;
+    align-items: center;
 }
 
-.footer
+.cabecalho
 {
-    background-color: #1e6381;
-    margin: .25% auto;
-    width: 90%;
-    min-height: 150px;
+    background-color: #B2D6FF;
+    width: 100%;
 }
+
+.conteudo
+{
+    background-color: #EAEDF0;
+    height: 600px;
+}
+
+.conteudo2
+{
+    background-color: #D6E9FE; 
+}
+
+.secao1
+{
+    background-color: #F5CF8E;
+}
+
+.secao2
+{
+    background-color: #F09A9D;
+}
+
+.secao3
+{
+    background-color: #C8C6FA;
+}
+
+/*Regra de estilo de dispositivos moveis*/
+@media only screen and (max-width: 400px){
+
+}
+
+/*Regra de estilo de dispositivos tablet*/
+@media only screen and (min-width: 401px) and (max-width: 960px){
+    body{
+        .conteudo2,
+        .secao1,
+        .secao2,
+        .secao3
+        {
+            width: 50%;
+        }
+    }
+}
+
+/*Regra de estilo de dispositivos computadores/tv*/
+@media only screen and (min-width: 961px){
+    .page{
+        width: 100% auto;
+        height: 100% auto;
+        margin: 0 auto; 
+    }
+
+    .secao1,
+    .secao2,
+    .secao3
+    {
+        width: 33.3%;
+    }
+    .cabecalho
+    {
+        height: 400px;
+    }
+    .conteudo2
+    {
+        height: 200px;
+        order:1;
+    }
+    .conteudo
+    {
+        order:2;
+    }
+}
+
+#nike-modelo-pequeno
+{
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+
+model-viewer
+{
+    width: 100%;
+    height: 100%;
+}
+
