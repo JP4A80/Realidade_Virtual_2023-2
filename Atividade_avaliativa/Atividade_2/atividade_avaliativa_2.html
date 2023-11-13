@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
 
 
-    <!-- Image link template to be reused. -->
+    <!--script para funcionar a navegação entre as imagens 360°-->
     <script id="link" type="text/html">
     <a-entity class="link"
         geometry="primitive: plane; height: 1; width: 1"
@@ -24,20 +24,18 @@
         sound="on: click; src: #click-sound"></a-entity>
     </script>
 
-    <!--script para funcionar botão de duvida-->
+    <!--script para funcionar infogroup e infoicone-->
     <script>
         AFRAME.registerComponent('infogroup', {
             init: function() {
                 this.el.addEventListener('reloadinfo', function(evt) {
                     var currinfogroup = document.getElementById(evt.detail.currinfo);
                     currinfogroup.setAttribute("scale", "0 0 0");
-
                     var newinfogroup = document.getElementById(evt.detail.newinfo);
                     newinfogroup.setAttribute("scale", "1 1 1");
                 });
             }
         });
-
         AFRAME.registerComponent('infoicon', {
             schema: {
                 infolink: { type: "string", default: "" }
@@ -65,11 +63,12 @@
 
 <body>
     <a-scene>
+        <!--Fazer o pre-carregamento das imagens/glb-->
         <a-assets>
             <img id="casa1" src="./Arquivos/casa 1.jpg">
             <img id="casa2" src="./Arquivos/casa 2.jpg">
             <img id="casa3" src="./Arquivos/casa 3.jpg">
-            <img id="informacao" src="./Arquivos/Escolha uma dos locais para.jpg">
+            <img id="informacao" src="./Arquivos/Escolha uma dos locais para.png">
             <img id="logocasa1" src="./Arquivos/Casa 1 - logo.png">
             <img id="logocasa2" src="./Arquivos/Casa 2 - logo.png">
             <img id="logocasa3" src="./Arquivos/Casa 3 - logo.png">
@@ -78,20 +77,25 @@
             <a-asset-item id="tree" src="./Arquivos/people.glb"></a-asset-item>
         </a-assets>
 
+        <!--Imagem principal 360°-->
         <a-sky id="image-360" radius="10" src="#casa1" rotation="0 -180 0"></a-sky>
 
+        <!--infogroup-->
         <a-entity id="duvidaBiliotecaInfo" infogroup position="0 0 0">
-        <a-image infoicon="infolink:#informacao" position="0.7 0 -3"></a-image>
+            <a-image infoicon="infolink:#informacao" position="0.7 0 -3"></a-image>
         </a-entity>
-
+        
+        <!--Modelo 3D do flint-->
         <a-entity gltf-model="#tree" animador-mixer position="3.5 -1 -6"></a-entity>
 
+        <!--infoicone-->
         <a-entity id="links" layout="type: line; margin: 1.5;" position="-3 0 -6">
             <a-entity template="src: #link" data-src="#casa1" data-thumb="#logocasa1"></a-entity>
             <a-entity template="src: #link" data-src="#casa2" data-thumb="#logocasa2"></a-entity>
             <a-entity template="src: #link" data-src="#casa3" data-thumb="#logocasa3"></a-entity>
         </a-entity>
 
+        <!--texto da pagina-->
         <a-text 
         font="kelsonsans" 
         value="Escolha uma casa para alugar " 
@@ -102,6 +106,7 @@
         shader="100000"
         ></a-text> 
 
+        <!--Curso do mouse-->
         <a-entity camera look-controls>
             <a-cursor id="cursor"
                 animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
