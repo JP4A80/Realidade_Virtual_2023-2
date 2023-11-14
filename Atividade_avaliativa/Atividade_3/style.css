@@ -18,7 +18,6 @@ body{
 .section
 {
     width: 100%;
-    height: 300px;
     display: flex;
 }
 
@@ -44,7 +43,24 @@ body{
 .conteudo
 {
     background-color: #EAEDF0;
-    height: 600px;
+}
+
+.titulo_tenis
+{
+    min-height: 50px;
+    max-height: 80px;
+    justify-content: center;
+    vertical-align: top;
+    color: #000000;
+    font-size: 3em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.produto1
+{
+    justify-content: center;
+    vertical-align: top;
+    height: 200px;
 }
 
 .conteudo2
@@ -59,6 +75,7 @@ body{
     background-color: #F5CF8E;
     justify-content: center;
     align-items: center;
+    height: 300px;
 }
 
 .secao2
@@ -66,6 +83,7 @@ body{
     background-color: #F09A9D;
     justify-content: center;
     align-items: center;
+    height: 300px;
 }
 
 .secao3
@@ -73,6 +91,7 @@ body{
     background-color: #C8C6FA;
     justify-content: center;
     align-items: center;
+    height: 300px;
 }
 
 .rodape
@@ -84,16 +103,7 @@ body{
     align-items: center;
 }
 
-.titulo_tenis
-{
-    
-    justify-content: center;
-    vertical-align: top;
-    color: #000000;
-    font-size: 2em;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-}
 
 
 
@@ -160,3 +170,8 @@ model-viewer
     height: 100%;
 }
 
+#teste
+{
+    width: 30%;
+    height: 100%;
+}
