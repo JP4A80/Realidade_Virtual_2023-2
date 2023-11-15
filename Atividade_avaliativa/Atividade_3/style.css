@@ -1,6 +1,9 @@
+
+
 body{
     font-family: 'Roboto';
     font-size: px;
+    background: #000000;
 }
 
 * {
@@ -24,26 +27,38 @@ body{
 .menu
 {
     background-color: #000000;
-    height: 400px;
     color:#FFF;
-    max-height: 50px;
-    min-height: 30px;
+    max-height: 80px;
+    min-height: 40px;
     justify-content: start;
+    align-items: center;
+}
+
+.menu2
+{
+    background-color: #000000;
+    color:#FFF;
+    max-height: 80px;
+    min-height: 40px;
+    justify-content: end;
     align-items: center;
 }
 
 .cabecalho
 {
-    background-color: #808080;
-    justify-content: start;
+    background-color: #868484;
+    justify-content: center;
     align-items: center;
+    height: 300px;
     
 }
 
 .conteudo
 {
-    background-color: #EAEDF0;
+    background-color: #808080;
 }
+
+
 
 .titulo_tenis
 {
@@ -58,39 +73,44 @@ body{
 
 .produto1
 {
+    background: linear-gradient(0deg, rgb(122, 122, 122), rgb(160, 160, 160));
     justify-content: center;
-    vertical-align: top;
+    vertical-align: center;
     height: 200px;
 }
 
 .conteudo2
 {
     background-color: #D6E9FE;
-    justify-content: center;
     align-items: center; 
+    height: 400px;
+}
+
+
+.secao
+{
+    background-color: #000000;
+    height: 80px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .secao1
 {
     background-color: #F5CF8E;
-    justify-content: center;
-    align-items: center;
     height: 300px;
 }
 
 .secao2
 {
     background-color: #F09A9D;
-    justify-content: center;
-    align-items: center;
     height: 300px;
 }
 
 .secao3
 {
     background-color: #C8C6FA;
-    justify-content: center;
-    align-items: center;
     height: 300px;
 }
 
@@ -114,13 +134,22 @@ body{
 
 /*Regra de estilo de dispositivos tablet*/
 @media only screen and (min-width: 401px) and (max-width: 960px){
+        .menu,
+        .menu2
+        {
+            width: 47%;
+        }
+
+        .secao
+    {
+        height: 50px;
+    }
     body{
-        .conteudo2,
         .secao1,
         .secao2,
         .secao3
         {
-            width: 50%;
+            width: 33.3%;
         }
     }
 }
@@ -128,8 +157,21 @@ body{
 /*Regra de estilo para computador*/
 @media only screen and (min-width: 961px){
     .page{
-        width: 960px;
+        width: 1200px;
         margin: 0 auto; 
+    }
+
+
+    .menu,
+    .menu2
+    {
+        width: 47%;
+    }
+    
+    
+    .secao
+    {
+        height: 50px;
     }
 
     .secao1,
@@ -138,15 +180,18 @@ body{
     {
         width: 33.3%;
     }
+
     .cabecalho
     {
         height: 400px;
     }
+
     .conteudo2
     {
-        height: 200px;
+        height: 500px;
         order:1;
     }
+
     .conteudo
     {
         order:2;
@@ -157,13 +202,6 @@ body{
     }
 }
 
-/*#teste
-{
-    width: 70%;
-    height: 70%;
-    margin: 0 auto;
-}
-*/
 model-viewer
 {
     width: 100%;
@@ -174,4 +212,27 @@ model-viewer
 {
     width: 30%;
     height: 100%;
+}
+
+p
+{
+    font-family: 'Work Sans', sans-serif;
+    text-align: justify;
+    margin: 2em;
+    line-height: 1.5em;
+}
+
+h1
+{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: #FFF;
+}
+
+h2
+{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2em;
+    color: #000000;
+    margin-left: 10px;
 }
